@@ -9,4 +9,3 @@ print(r)
 
 r.sort(reverse=True)
 print(r)
-
