@@ -11,5 +11,6 @@ print(string.count('i'))
 print(string.capitalize())
 # 単語の始まりを大文字に
 print(string.title())
+# 全て小文字に
 print(string.lower())
 print(string.replace('Kota', 'Kim'))
