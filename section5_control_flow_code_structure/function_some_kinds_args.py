@@ -17,6 +17,7 @@ def lst_append(x, lst=[]):
 
 
 def lst_none_append(x, lst=None):
+    # 自分でからの配列を作る
     if lst is None:
         lst = []
     lst.append(x)
