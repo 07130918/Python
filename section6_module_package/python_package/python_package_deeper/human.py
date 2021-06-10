@@ -1,4 +1,5 @@
-from python_package import utils
+# from python_package import utils
+from .. import utils
 
 
 def sing():
