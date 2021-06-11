@@ -3,7 +3,11 @@
 
 # from l_package.talk import *
 from l_package.talk import animal, human
-from l_package.tools import utils
+
+try:
+    from l_package import utils
+except ImportError:
+    from l_package.tools import utils
 
 result = utils.say_twice("hello")
 print(result)
