@@ -3,15 +3,16 @@ print(dic[200])
 
 print(dic.values())
 
-c = {'abc': 'yyy', 'color': 'red'}
-
 dic = {}
 dic["このように"] = "値をset"
 print(dic)
-dic.clear()
+# dic.clear()
+
+c = {'abc': 'yyy', 'color': 'red'}
 
 # オーバーライド
 dic.update(c)
 print(dic)
 
+# keyの判定
 print('abc' in dic)
