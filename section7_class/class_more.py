@@ -24,10 +24,9 @@ class TeslaCar(Car):
     # setter
     @enable_auto_run.setter
     def enable_auto_run(self, is_enable):
-        if self.pass_word == '456':
-            self._enable_auto_run = is_enable
-        else:
-            raise ValueError
+        if self.pass_word != '456':
+            raise ValueError("passwordが違います")
+        self._enable_auto_run = is_enable
 
     def run(self):
         print('super fast')
