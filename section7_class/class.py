@@ -1,5 +1,6 @@
 class Person(object):
     # selfを忘れないように!
+    # ↓constructor
     def __init__(self, name):
         self.name = name
         print(f'init: {self.name}')
@@ -11,6 +12,13 @@ class Person(object):
     def run(self, num):
         print('run' * num)
 
+    # ↓destructor
+    def __del__(self):
+        print('Good bye')
+
 
 person = Person('kota')
 person.say_something()
+
+del person
+print('------------')
