@@ -1,4 +1,3 @@
-------------
 test
 Hello text file
 My#name#is#kota!
