@@ -19,4 +19,7 @@ shutil.copy('__pycache__/csv.cpython-38.pyc', '__pycache__/index.pyc')
 print(glob.glob('__pycache__/*'))
 
 # ディレクトリの中のファイル全てを消すので注意
-shutil.rmtree('__pycache__')
+# linuxのrm -r
+# shutil.rmtree('__pycache__')
+
+print(os.getcwd())
