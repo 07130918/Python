@@ -16,16 +16,16 @@ def get_name():
 def read_csv():
     with open("ranking.csv", "r") as csv_file:
         name_count = csv.DictReader(csv_file)
-        name_count_list = [i for i in name_count]
-        return name_count_list
+        name_count = [i for i in name_count]
+        return name_count
 
 
-def column_to_int(name_count_list):
-    for dic in name_count_list:
+def column_to_int(name_count):
+    for dic in name_count:
         for key in dic:
             if key == 'Count':
                 dic[key] = int(dic[key])
-    return name_count_list
+    return name_count
 
 
 def list_sort(restaurant_count):
@@ -34,11 +34,7 @@ def list_sort(restaurant_count):
     return sorted_list
 
 
-def recommend():
-    name_count_list = column_to_int(read_csv())
-    sorted_list = list_sort(name_count_list)
-    if len(sorted_list) == 0:
-        return None
+def recommend_loop(sorted_list):
     for i in sorted_list:
         print(colored('=' * 50, 'green'))
         print(
@@ -47,7 +43,16 @@ def recommend():
         yes_no = input()
         if yes_no == 'y' or yes_no == 'yes' or yes_no == 'Yes':
             i["Count"] += 1
-    return sorted_list
+    ranking = sorted_list
+    return ranking
+
+
+def counter():
+    if len(read_csv()) == 0:
+        return
+    name_count = column_to_int(read_csv())
+    sorted_list = list_sort(name_count)
+    return recommend_loop(sorted_list)
 
 
 def ask_restaurant(name):
@@ -57,8 +62,7 @@ def ask_restaurant(name):
 
 
 def get_restaurant_name():
-    restaurant_name = input('Restaurant name: ').title()
-    return restaurant_name
+    return input('Restaurant name: ').title()
 
 
 def close_conversation(name):
@@ -68,36 +72,43 @@ def close_conversation(name):
     print(colored('=' * 50, 'green'))
 
 
+def create_new_csv(restaurant_name):
+    with open('ranking.csv', 'w') as csv_file:
+        writer = csv.DictWriter(csv_file, fieldnames=[
+            'Restaurant name', 'Count'])
+        writer.writeheader()
+        writer.writerow({'Restaurant name': restaurant_name, 'Count': 1})
+
+
 def write_csv(ranking, restaurant_name):
-    if ranking is None:
-        with open('ranking.csv', 'w') as csv_file:
-            writer = csv.DictWriter(csv_file, fieldnames=[
+    if len(read_csv()) == 0:
+        create_new_csv(restaurant_name)
+        return
+
+    through_status = None
+    for i in ranking:
+        if restaurant_name == list(i.values())[0]:
+            through_status = 'ok'
+            i['Count'] += 1
+            break
+    if through_status != 'ok':
+        ranking.append({'Restaurant name': restaurant_name, 'Count': 1})
+
+    with open('ranking.csv', 'w') as csv_file:
+        writer = csv.DictWriter(csv_file, fieldnames=[
                                 'Restaurant name', 'Count'])
-            writer.writeheader()
-            writer.writerow({'Restaurant name': restaurant_name, 'Count': 1})
-    else:
-        for i in ranking:
-            if restaurant_name == list(i.values())[0]:
-                i['Count'] += 1
-                break
-            else:
-                ranking.append({'Restaurant name': restaurant_name, 'Count': 1})
-                break
-        with open('ranking.csv', 'w') as csv_file:
-            writer = csv.DictWriter(csv_file, fieldnames=[
-                                    'Restaurant name', 'Count'])
-            writer.writeheader()
-            for r in ranking:
-                writer.writerow({
-                    'Restaurant name': r['Restaurant name'],
-                    'Count': r['Count']
-                })
+        writer.writeheader()
+        for r in ranking:
+            writer.writerow({
+                'Restaurant name': r['Restaurant name'],
+                'Count': r['Count']
+            })
 
 
 def main():
     opening_greeting()
     name = get_name()
-    ranking = recommend()
+    ranking = counter()
     ask_restaurant(name)
     restaurant_name = get_restaurant_name()
     close_conversation(name)
