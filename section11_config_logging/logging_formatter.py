@@ -18,6 +18,7 @@ logging.error('error')
 logging.warning('warning')
 logging.info('info')
 logging.debug('debug')
+print('-------------------')
 
 logging.info('info {}'.format('test'))
 logging.info('info %s %s' % ('test', 'test2'))
