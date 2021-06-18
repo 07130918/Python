@@ -8,7 +8,10 @@ DEBUG
 
 import logging
 
-logging.basicConfig(filename='test.log', level=logging.INFO)
+formatter = '%(levelname)s: %(message)s: %(asctime)s'
+# logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO, format=formatter)
+# logging.basicConfig(filename='test.log', level=logging.INFO)
 
 logging.critical('critical')
 logging.error('error')
