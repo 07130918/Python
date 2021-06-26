@@ -1,7 +1,6 @@
 import sqlite3
 
 import memcache
-from sympy import per
 
 db = memcache.Client(['127.0.0.1:11211'])
 
