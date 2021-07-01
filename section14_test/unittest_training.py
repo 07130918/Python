@@ -1,6 +1,6 @@
 import unittest
 
-import unittest_cal
+import test_cal
 
 release_name = 'unit test'
 
@@ -10,7 +10,7 @@ class CalTest(unittest.TestCase):
         """execute when test started
         """
         print('Set up test')
-        self.cal = unittest_cal.Cal()
+        self.cal = test_cal.Cal()
 
     def tearDown(self):
         """execute when test ended
