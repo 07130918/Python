@@ -7,7 +7,7 @@ class Cal(object):
 
         >>> c.add_num_and_double("1", "1")
         4
-        
+
         >>> c.add_num_and_double("1", "1")
         Traceback (most recent call last):
         ...
