@@ -4,6 +4,7 @@ import test_cal
 
 # class name must start to Test
 # func name must start to test_
+is_release = True
 
 
 def test_add_num_and_double():
@@ -38,6 +39,8 @@ class TestCal(object):
     def test_add_num_and_double(self):
         assert self.cal.add_num_and_double(1, 1) == 4
 
+    # @pytest.mark.skip(reason='skip')
+    @pytest.mark.skipif(is_release is True, reason='skip')
     def test_add_num_and_double_raise(self):
         with pytest.raises(ValueError):
-            self.cal.add_num_and_double(1, "1")
+            self.cal.add_num_and_double(1, 1)
