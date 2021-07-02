@@ -1,4 +1,5 @@
 import pytest
+
 import test_cal
 
 # class name must start to Test
@@ -11,11 +12,32 @@ def test_add_num_and_double():
 
 
 class TestCal(object):
+
+    @classmethod
+    def setup_class(cls):
+        print('start')
+        cls.cal = test_cal.Cal()
+
+    @classmethod
+    def teardown_class(cls):
+        print('end')
+        del cls.cal
+
+    def setup_method(self, method):
+        """execute when test started
+        """
+        print(f'method={method.__name__}')
+        # self.cal = test_cal.Cal()
+
+    def teardown_method(self, method):
+        """execute when test ended
+        """
+        print(f'method={method.__name__}')
+        # del self.cal
+
     def test_add_num_and_double(self):
-        cal = test_cal.Cal()
-        assert cal.add_num_and_double(1, 1) == 6
+        assert self.cal.add_num_and_double(1, 1) == 4
 
     def test_add_num_and_double_raise(self):
         with pytest.raises(ValueError):
-            cal = test_cal.Cal()
-            cal.add_num_and_double(1, 1)
+            self.cal.add_num_and_double(1, "1")
