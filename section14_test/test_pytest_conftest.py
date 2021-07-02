@@ -28,4 +28,5 @@ class TestCal(object):
     def test_save(self, tmpdir):
         self.cal.save(tmpdir, self.test_file_name)
         test_file_path = os.path.join(tmpdir, self.test_file_name)
+        print(test_file_path)
         assert os.path.exists(test_file_path) is True
