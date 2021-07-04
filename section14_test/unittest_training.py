@@ -32,5 +32,6 @@ class CalTest(unittest.TestCase):
             self.cal.add_num_and_double('1', '1')
 
 
+# unittestはこれがないと走らない
 if __name__ == '__main__':
     unittest.main()
