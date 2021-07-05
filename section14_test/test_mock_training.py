@@ -1,6 +1,6 @@
 import unittest
-from unittest.mock import MagicMock
 from unittest import mock
+from unittest.mock import MagicMock
 
 import mock_training
 
@@ -50,7 +50,8 @@ class TestSalary(unittest.TestCase):
             mock_bonus.assert_called()
 
     def setUp(self):
-        self.patcher = mock.patch('mock_training.ThirdPartyBonusRestApi.bonus_price')
+        self.patcher = mock.patch(
+            'mock_training.ThirdPartyBonusRestApi.bonus_price')
         self.mock_bonus = self.patcher.start()
 
     def tearDown(self):
@@ -86,6 +87,21 @@ class TestSalary(unittest.TestCase):
         s = mock_training.Salary(year=2019)
         with self.assertRaises(ValueError):
             s.calculation_salary()
+
+    @mock.patch('mock_training.ThirdPartyBonusRestApi', spec=True)
+    def test_calculation_salary_class(self, MockRest):
+        """ when you use docollator and spec
+        """
+        # ↓2行は同じ意味
+        mock_rest = MockRest.return_value
+        # mock_rest = MockRest()
+        mock_rest.bonus_price.return_value = 1
+
+        s = mock_training.Salary(year=2017)
+        salary_price = s.calculation_salary()
+
+        self.assertEqual(salary_price, 101)
+        mock_rest.bonus_price.assert_called()
 
 
 if __name__ == '__main__':
