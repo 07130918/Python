@@ -91,6 +91,7 @@ class TestSalary(unittest.TestCase):
     @mock.patch('mock_training.ThirdPartyBonusRestApi', spec=True)
     def test_calculation_salary_class(self, MockRest):
         """ when you use docollator and spec
+            classごとmock作成
         """
         # ↓2行は同じ意味
         mock_rest = MockRest.return_value
