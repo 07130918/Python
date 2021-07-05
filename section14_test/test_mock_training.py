@@ -89,10 +89,12 @@ class TestSalary(unittest.TestCase):
             s.calculation_salary()
 
     @mock.patch('mock_training.ThirdPartyBonusRestApi', spec=True)
-    def test_calculation_salary_class(self, MockRest):
+    @mock.patch('mock_training.Salary.get_from_boss')
+    def test_calculation_salary_class(self, mock_boss, MockRest):
         """ when you use docollator and spec
             classごとmock作成
         """
+        mock_boss.return_value = 10
         # ↓2行は同じ意味
         mock_rest = MockRest.return_value
         # mock_rest = MockRest()
@@ -101,7 +103,7 @@ class TestSalary(unittest.TestCase):
         s = mock_training.Salary(year=2017)
         salary_price = s.calculation_salary()
 
-        self.assertEqual(salary_price, 101)
+        self.assertEqual(salary_price, 111)
         mock_rest.bonus_price.assert_called()
 
 
