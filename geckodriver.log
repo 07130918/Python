@@ -1,0 +1,33 @@
+1625450027491	geckodriver	INFO	Listening on 127.0.0.1:51453
+1625450028457	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/sj/y28vmn0s5gd3zpnmmr9kwc0w0000gn/T/rust_mozprofileqhWFYZ"
+1625450029542	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/sj/y28vmn0s5gd3zpnmmr9kwc0w0000gn/T/rust_mozprofileqhWFYZ/search.json.mozlz4", (void 0)))
+1625450032218	Marionette	INFO	Listening on port 51464
+1625450032249	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+1625450112872	geckodriver	INFO	Listening on 127.0.0.1:51588
+1625450112881	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/sj/y28vmn0s5gd3zpnmmr9kwc0w0000gn/T/rust_mozprofilejLmTTh"
+1625450113247	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/sj/y28vmn0s5gd3zpnmmr9kwc0w0000gn/T/rust_mozprofilejLmTTh/search.json.mozlz4", (void 0)))
+1625450114862	Marionette	INFO	Listening on port 51597
+1625450114974	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625450117551	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:237:19
+TimedPromise@chrome://marionette/content/sync.js:222:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:431:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+1625450121537	Marionette	INFO	Stopped listening on port 51597
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625450128751	geckodriver	INFO	Listening on 127.0.0.1:51677
+1625450128760	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/sj/y28vmn0s5gd3zpnmmr9kwc0w0000gn/T/rust_mozprofileAgNpzk"
+1625450129107	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/sj/y28vmn0s5gd3zpnmmr9kwc0w0000gn/T/rust_mozprofileAgNpzk/search.json.mozlz4", (void 0)))
+1625450130646	Marionette	INFO	Listening on port 51686
+1625450130743	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+1625450136861	Marionette	INFO	Stopped listening on port 51686
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
