@@ -21,6 +21,5 @@ if __name__ == '__main__':
         print(threading.enumerate())
     for thr in threading.enumerate():
         if thr is threading.current_thread():
-            print(thr)
             continue
         thr.join()
