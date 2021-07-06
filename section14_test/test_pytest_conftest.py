@@ -1,5 +1,5 @@
 # 実行コマンド
-# pytest test_pytest_conftest.py --os-name = mac - s
+# pytest test_pytest_conftest.py --os-name=mac -s
 
 import os
 import shutil
