@@ -36,4 +36,4 @@ if __name__ == '__main__':
     print(ts)
     for _ in range(len(ts)):
         queue.put(None)
-    [t.join() for t in ts]
+    print([t.join() for t in ts])
