@@ -18,6 +18,7 @@ if __name__ == '__main__':
         # 同期
         logging.debug(p.apply(worker1, (200, )))
         logging.debug('executed apply')
+        # 非同期
         p1 = p.apply_async(worker1, (100, ))
         p2 = p.apply_async(worker1, (100, ))
         p3 = p.apply_async(worker1, (100, ))
