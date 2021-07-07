@@ -1,4 +1,5 @@
 .vscode
 .DS_Store
+.pytest_cache
 section14_test/.pytest_cache
 section14_test/.coverage
