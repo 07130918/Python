@@ -15,6 +15,9 @@ def worker1(i):
 if __name__ == '__main__':
     # poolで走らせるprocessの数を決める
     with multiprocessing.Pool(2) as p:
+        # 同期
+        logging.debug(p.apply(worker1, (200, )))
+        logging.debug('executed apply')
         p1 = p.apply_async(worker1, (100, ))
         p2 = p.apply_async(worker1, (100, ))
         p3 = p.apply_async(worker1, (100, ))
