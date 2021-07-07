@@ -18,7 +18,7 @@ if __name__ == '__main__':
         t1.setDaemon(True)
         t1.start()
         # threads.append(t1)
-        print(threading.enumerate())
+    print(threading.enumerate())
     for thr in threading.enumerate():
         if thr is threading.current_thread():
             continue
