@@ -1,6 +1,6 @@
 import re
 
-s = 'My name is ... Mike'
+s = 'My name is ... @ Mike'
 print(s.split())
 
 p = re.compile(r'\W+')
