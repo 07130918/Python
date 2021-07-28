@@ -3,3 +3,5 @@
 .pytest_cache
 section14_test/.pytest_cache
 section14_test/.coverage
+section20_data_analysis/.ipynb_checkpoints
+
