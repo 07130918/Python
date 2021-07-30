@@ -1,5 +1,3 @@
-from email import message
-from aem import con
 import zmq
 
 context = zmq.Context()
