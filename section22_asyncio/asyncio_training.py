@@ -24,3 +24,4 @@ loop.run_until_complete(asyncio.wait([
     hello("http://httpbin.org/headers"),
     hello("http://httpbin.org/headers")
 ]))
+loop.close()
