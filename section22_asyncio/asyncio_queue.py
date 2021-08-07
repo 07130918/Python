@@ -1,5 +1,4 @@
 import asyncio
-from re import X
 
 loop = asyncio.get_event_loop()
 
