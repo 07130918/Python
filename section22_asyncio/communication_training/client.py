@@ -43,13 +43,33 @@ class AsyncIterater(object):
         return data
 
 
+class AsyncContextManager(object):
+    def __init__(self, name, loop):
+        self.enter = 'Enter'
+        self.ac = AsyncIterater(name, loop)
+        self.exit = 'Exit'
+
+    async def __aenter__(self):
+        print(self.enter)
+        await asyncio.sleep(3)
+        return self.ac
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        print(self.exit)
+        await asyncio.sleep(3)
+
+
 async def main(name, loop):
     print('chunk reader')
     # result = await AwaitableClass(name, loop)
-    async for i in AsyncIterater(name, loop):
-        """ __anext__を繰り返し呼ぶ
-        """
-        print(i)
+    # async for i in AsyncIterater(name, loop):
+    #     """ __anext__を繰り返し呼ぶ
+    #     """
+    #     print(i)
+    async with AsyncContextManager(name, loop) as ac:
+        # async with に入ると__aenter__を呼ぶ
+        async for i in ac:
+            print(i)
 
 
 loop.run_until_complete(asyncio.wait([
