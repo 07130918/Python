@@ -9,7 +9,7 @@ class CountServer(object):
 
     async def handle_echo(self, reader, writer):
         data = await reader.read()
-        print(data)
+        print(f"data: {data}")
         name = data.decode()
 
         with await self.lock:
