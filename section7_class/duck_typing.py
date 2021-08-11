@@ -31,9 +31,9 @@ class Car(object):
 
 
 adult = Adult(23)
-print(adult.age)
+print(f'adult age: {adult.age}')
 baby = Baby(2)
-print(baby.age)
+print(f'baby age: {baby.age}')
 car = Car()
 car.ride(adult)
 car.ride(baby)
