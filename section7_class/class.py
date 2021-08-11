@@ -1,3 +1,6 @@
+import inspect
+
+
 class Person(object):
     # selfを忘れないように!
     # ↓constructor
@@ -22,3 +25,5 @@ person.say_something()
 
 del person
 print('------------')
+
+print([x for x in inspect.getmembers(Person)])
