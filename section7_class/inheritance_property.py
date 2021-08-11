@@ -12,6 +12,7 @@ class ToyotaCar(Car):
 
 class TeslaCar(Car):
     def __init__(self, model='Model S', enable_auto_run=False, pass_word='123'):
+        # super()は親のCar(object)を指す
         super().__init__(model)
         self._enable_auto_run = enable_auto_run
         self.pass_word = pass_word
