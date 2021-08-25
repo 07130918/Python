@@ -9,3 +9,23 @@ JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: 
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1629852499847	geckodriver	INFO	Listening on 127.0.0.1:63288
+1629852499858	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/sj/y28vmn0s5gd3zpnmmr9kwc0w0000gn/T/rust_mozprofile2mF1TM"
+1629852501506	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/sj/y28vmn0s5gd3zpnmmr9kwc0w0000gn/T/rust_mozprofile2mF1TM/search.json.mozlz4", (void 0)))
+1629852503152	Marionette	INFO	Listening on port 63297
+1629852503206	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+1629852509038	Marionette	INFO	Stopped listening on port 63297
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1629852515983	geckodriver	INFO	Listening on 127.0.0.1:63394
+1629852515992	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/sj/y28vmn0s5gd3zpnmmr9kwc0w0000gn/T/rust_mozprofileoI3m4s"
+1629852516348	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/sj/y28vmn0s5gd3zpnmmr9kwc0w0000gn/T/rust_mozprofileoI3m4s/search.json.mozlz4", (void 0)))
+1629852517912	Marionette	INFO	Listening on port 63403
+1629852517985	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource:///actors/ContentMetaChild.jsm, line 179: InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+1629852523714	Marionette	INFO	Stopped listening on port 63403
