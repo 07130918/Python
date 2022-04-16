@@ -1,7 +1,11 @@
 .vscode
 .DS_Store
 .pytest_cache
+.ipynb_checkpoints
 section14_test/.pytest_cache
 section14_test/.coverage
 section20_data_analysis/.ipynb_checkpoints
 knock/.ipynb_checkpoints
+outside/.ipynb_checkpoints
+outside/__pycache__
+outside/.c9
